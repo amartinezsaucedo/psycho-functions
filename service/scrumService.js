@@ -46,8 +46,9 @@ const scrumService = {
           const actionId = actionData[index++];
           const objectId = actionData[index++];
           const value = actionData[index++];
+          const attributeSource = actionData[index++];
           const date = actionData[index];
-          documentActions.push({ actionId, objectId, value, date });
+          documentActions.push({ actionId, objectId, value, attributeSource, date });
         }
       }
       await documentRef.update({ actions: documentActions });
